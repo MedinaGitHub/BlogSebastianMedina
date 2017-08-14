@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Sebastian Medina</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <a class="navbar-brand" href="index.html">Sebastian Medina</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">Sobre Mí</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="post.html">Algunos Post</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('https://cdn-images-1.medium.com/max/1200/1*wzEf4qVNT7mUeMIeQWTJbg.jpeg')">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Subiendo un proyecto a GitHub 
+</h1>
+              <span class="subheading">Desde la consola subiremos un proyecto a GitHub reconociendo los comandos básicos. </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <p>En primer lugar crearemos una carpeta donde configuraremos nuestro ambiente Git, para esto haremos lo siguiente</p>
+
+            <p>1-Iniciar Git en nuestra carpeta de proyecto con <br> $git init</p>
+
+            <p>2-Identificarnos, para que los cambios salgan a nuestro nombre. <br>
+            $ git config --global user.name "TU NOMBRE"<br>
+
+            $ git config --global user.email "TU CORREO DE GITHUB"</p>
+
+            <p>3-Crear el repositorio en gitHub y obtener la ruta del repo para poder clonarla.</p>
+
+            <p>4-usar git remote para conectar repositorios locales(como el archivo de tu proyecto en tu pc) y remotos(tu repo en git) <br>
+            $ git remote add origin git@github.com:MedinaGitHub/BlogSebastianMedina.git
+             .</p>
+
+              <p>5-Ponermos nuestro asset de nuestra pagina en la carpeta y subimos los archivos con el comando<br>
+            $ git add -A (para agregar todos los archivos al staging area, si deseamos solo agregar un archivo especifico el comando debe ser git add nombreArchivo.txt )
+
+            <br>
+            $ git commit -m"Subiendo proyecto" (confirma los cambios)
+
+             <br>
+            $ git push origin/master (sube los cambios)
+             .</p>
+
+
+
+
+            <h2 class="section-heading">Explicacion de los comandos</h2>
+
+            <h3>git init</h3>
+
+            <p>
+              Inicia un nuevo repositorio de Git. Esto permite que Git empiece a rastrear al repositorio con todos los cambios que hagas dentro.
+
+              Es lo primero que tienes que hacer antes de empezar a trabajar.
+
+              Te sitúas en la carpeta de trabajo que vas a utilizar Git y ejecutas:
+
+            </p>
+
+            <h3>git config</h3>
+
+            <p>
+              Configura todas las opciones que puedes hacer con GIT.
+            </p>
+
+              <h3>git remote</h3>
+
+            <p>
+              Es un comando que te permite conectar un repositorio locales y remotos.
+
+              Un administrador de conexiones, en definición sencilla.
+
+              En lugar de poner constantemente la URL para realizar los comandos de “fetch”, “pull”, y “push”, sólo le asignamos un nombre y podemos llamar esa conexión de manera rápida.
+              <br>
+              git remote add [“nombre del remoto"]* Por defecto, se llama “origin”.  
+            </p>
+
+             <h3>git add</h3>
+
+            <p>
+              Mueve todos los cambios del “Working Directory” al “Staging Area”.
+
+
+              Esto da la oportunidad de preparar los archivos antes de realizar la confirmación con el “commit” a la historia principal del proyecto.
+
+
+              El comando es:
+              git add [nombre del archivo]    -> Agrega el cambio ó creación del archivo de manera individual.
+              git add .    -> Agrega los cambios de todos los archivos, pero no los nuevos creados ó nuevos eliminados.git add -A   -> Agrega los cambios los archivos, incluidos nuevos creados ó nuevos eliminados.
+            </p>
+
+            <h3>git commit</h3>
+
+            <p>
+              Inserta el conjunto de archivos que se encuentra en el "Staging Area” y los colocan en el repositorio.
+              Cada “set” de archivos insertados en la historia del proyecto se la llama “commit”.
+              Combinado con git add, ese define el proceso básico de GIT.
+              git commit -m [nombre del título del commit]
+            </p>
+
+            <h3>git push</h3>
+
+            <p>
+              “Pushing” es el opuesto a “fetching”.
+
+
+              Te permite mover una rama local a otro repositorio, que usualmente es la forma de publicar contribuciones, en un servidor remoto.
+
+
+              Se pueden enviar muchos commits al mismo tiempo, no sólo uno.
+
+
+              git push [nombre del remoto] [nombre de la rama]
+            </p>
+             <a href="#">
+              <img class="img-fluid" src="img/procesoBasico.png" alt="">
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; Your Website 2017</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+  </body>
+
+</html>

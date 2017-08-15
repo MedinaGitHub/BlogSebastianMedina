@@ -21,6 +21,10 @@
     <!-- Custom styles for this template -->
     <link href="css/clean-blog.min.css" rel="stylesheet">
 
+    <style type="text/css">
+      .color-blue{color:#2196f3;}
+    </style>
+
   </head>
 
   <body>
@@ -70,45 +74,76 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <p>En primer lugar crearemos una carpeta donde configuraremos nuestro ambiente Git, para esto haremos lo siguiente</p>
+            <p>
+              En primer lugar, crearemos una carpeta donde configuraremos nuestro ambiente Git, para esto haremos lo siguiente
+            </p>
 
-            <p>1-Iniciar Git en nuestra carpeta de proyecto con <br> $git init</p>
+            <p>
+              1-Iniciar Git en nuestra carpeta de proyecto con <br>
+              <div class="color-blue"> $git init</div>
+            </p>
 
-            <p>2-Identificarnos, para que los cambios salgan a nuestro nombre. <br>
-            $ git config --global user.name "TU NOMBRE"<br>
+            <p>
+              2-Identificarnos, para que los cambios salgan a nuestro nombre. <br>
+               <div class="color-blue">$ git config --global user.name "TU NOMBRE"</div><br>
 
-            $ git config --global user.email "TU CORREO DE GITHUB"</p>
+               <div class="color-blue">$ git config --global user.email "TU CORREO DE GITHUB"</div><br>
 
-            <p>3-Crear el repositorio en gitHub y obtener la ruta del repo para poder clonarla.</p>
+              podemos ver que todo salió bien con <div class="color-blue"> $git config --list</div>
+            </p>
 
-            <p>4-usar git remote para conectar repositorios locales(como el archivo de tu proyecto en tu pc) y remotos(tu repo en git) <br>
-            $ git remote add origin git@github.com:MedinaGitHub/BlogSebastianMedina.git
-             .</p>
+            <p>
+              3-Crear el repositorio en gitHub.
+            </p>
+
+            <p>
+              4-usar git remote para conectar repositorios locales(como el archivo de tu proyecto en tu pc) y remotos(tu repo en git) <br>
+
+              Es necesario tener en consideración como nos autenticaremos para luego poder hacer push, hay dos maneras. Una es a través de SSH con el comando<br><br>
+              <div class="color-blue"> $ git remote add origin git@github.com:MedinaGitHub/BlogSebastianMedina.git</div> <br><br> 
+              Y la otra a través de HTTPS con el comando<br>
+              <div class="color-blue">$ git remote add origin https://github.com/MedinaGitHub/BlogSebastianMedina.git</div> <br>
+              <br>
+              si nos conectamos a través de SHH debemos hacer la siguiente configuración.
+              <br>
+              Crear la llave SSH guardándola en su lugar por defecto y dejado la clave vacía, (enter enter enter) <br>
+
+               <div class="color-blue"> $ssh-keygen -t rsa -b 4096 -C "TuCorreoGitHub"</div> 
+               <br>
+               luego les saldrá la huella digital y luego debemos tomar la llave publica y ponerla en GitHub en nuestro usuario. con es podemos ya trabajar en cualquier repo, si usamos otro pc después debemos repetir esto y agregar a nuestro usuario otra llave mas.
+              <br>
+
+              <div class="color-blue"> $cd .ssh </div> (carpeta donde esta nuestra llave publica y nuestra llave privada)
+              <br>
+               $ls 
+              <br>
+              <div class="color-blue"> $cat id_rsa.pub</div> (la carpeta con extensión pub es la llave publica, la otra es la llave privada. copiamos el contenido y lo pegamos en nuestra configuración de nuestra cuenta en GitHub)
+                <br><br>
+
+                Si nos conectamos mediando HTTPS git nos pedira pedirá loguearnos con nuestro usuario GitHub
+             </p>
 
               <p>5-Ponermos nuestro asset de nuestra pagina en la carpeta y subimos los archivos con el comando<br>
-            $ git add -A (para agregar todos los archivos al staging area, si deseamos solo agregar un archivo especifico el comando debe ser git add nombreArchivo.txt )
+            <div class="color-blue">$ git add -A </div>(para agregar todos los archivos al staging area, si deseamos solo agregar un archivo especifico el comando debe ser git add nombreArchivo.txt )
 
             <br>
-            $ git commit -m"Subiendo proyecto" (confirma los cambios)
+           <div class="color-blue"> $ git commit -m"Subiendo proyecto"</div> (confirma los cambios)
 
              <br>
-            $ git push origin/master (sube los cambios)
+            <div class="color-blue"> $ git push origin/master</div> (sube los cambios)
              .</p>
 
 
 
 
-            <h2 class="section-heading">Explicacion de los comandos</h2>
+            <h2 class="section-heading">Explicación de los comandos</h2>
 
             <h3>git init</h3>
 
             <p>
-              Inicia un nuevo repositorio de Git. Esto permite que Git empiece a rastrear al repositorio con todos los cambios que hagas dentro.
+              Es lo primero que tienes que hacer antes de empezar a trabajar por primera vez dentro de tu carpeta.<br>
 
-              Es lo primero que tienes que hacer antes de empezar a trabajar.
-
-              Te sitúas en la carpeta de trabajo que vas a utilizar Git y ejecutas:
-
+              Este comando inicia un nuevo repositorio de Git. Esto permite que Git empiece a rastrear al repositorio con todos los cambios que hagas dentro.
             </p>
 
             <h3>git config</h3>
@@ -157,12 +192,9 @@
             <p>
               “Pushing” es el opuesto a “fetching”.
 
-
               Te permite mover una rama local a otro repositorio, que usualmente es la forma de publicar contribuciones, en un servidor remoto.
 
-
               Se pueden enviar muchos commits al mismo tiempo, no sólo uno.
-
 
               git push [nombre del remoto] [nombre de la rama]
             </p>

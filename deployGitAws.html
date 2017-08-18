@@ -44,9 +44,11 @@
           <li class="nav-item">
             <a class="nav-link" href="about.html">Sobre Mí</a>
           </li>
+          <!--
           <li class="nav-item">
             <a class="nav-link" href="post.html">Algunos Post</a>
           </li>
+          -->
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Contacto</a>
           </li>
@@ -75,19 +77,19 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <p>
-              En primer lugar, Aprenderemos como subir una instancia a AWS EC2, si ya sabes hacer esto ve a al punto "Conectandonos vía SSH"
+              En primer lugar, Aprenderemos como subir una instancia a AWS EC2, si ya sabes hacer esto ve a al punto "Conectándonos vía SSH"
               para ver la parte de deployment
             </p>
 
             <p>
-              <h3> Introduccion a AWS</h3> <br>
-              En este tutorial levantaremos una instancia de ec2 osea un servidor virtual elastico, es elastico por que el proyecto crece o disminuye automaticamente dependiendo del uso de este. para ello primero tenemos que configurar 3 cosas, primero el security group, luego la llave de seguridad y después el load balancer. Iremos entrando en detalle sobre que son cada uno de ellos.
+              <h3> Introducción a AWS</h3> <br>
+              En este tutorial levantaremos una instancia de ec2, es decir, un servidor virtual elastico, es elastico por que el proyecto crece o disminuye automáticamente dependiendo del uso de este. para ello primero tenemos que configurar 3 cosas, primero el security group, luego la llave de seguridad y después el load balancer. Iremos entrando en detalle sobre que son cada uno de ellos.
               
             </p>
 
             <p>
               <h3> 1- Security Group</h3> <br>
-               el secutiry group es como un firewall virtual que controla es tráfico de una o más instancias, por ejemplo podemos permitir que se pueda entrar a nuestro sistma por http o por shh o por ambos. Por defecto esta todo denegado, así que ponemos lo que queremos permitir.
+               El secutiry group es como un firewall virtual que controla el tráfico de una o más instancias, por ejemplo, podemos permitir que se pueda entrar a nuestro sistema por http o por shh o por ambos. Por defecto esta todo denegado, así que ponemos lo que queremos permitir.
 
                 <a href="#">
               <img class="img-fluid" src="img/secutityGroup.jpg" alt="">
@@ -96,7 +98,7 @@
 
             <p>
               <h3> 2- Key Pair (llave de seguridad)</h3> <br>
-               cuando creamor la llave de seguridad se generara un archivo con extención .pem este archivo tendrá una llave privada que queda en el servidor de amazon y una llave pública que nos servira para identificarnos y acceder al servidor
+               Cuando creamor la llave de seguridad se generara un archivo con extención .pem este archivo tendrá una llave privada que queda en el servidor de amazon y una llave pública que nos servira para identificarnos y acceder al servidor
 
                 <a href="#">
               <img class="img-fluid" src="img/keypar.jpg" alt="">
@@ -109,22 +111,22 @@
 
             <p>
               <h3> 3- Load Balancer</h3> <br>
-                gestiona las llamas al servidor para que no se caiga, este ve porque puertos entrara cada persona para ver si llevar el trafico a otro servidor o no, es decir, recibe el trafico y lo divide en los servidores
+                Gestiona las llamas al servidor para que no se caiga, este ve porque puertos entrara cada persona para ver si llevar el trafico a otro servidor o no, es decir, recibe el trafico y lo divide en los servidores
                 <a href="#">
               <img class="img-fluid" src="img/loadBalancer.jpg" alt="">
               </a>
 
-              Selecciona el Classic Load Balancer luego te saldra la configuración basica en este definimos el nombre del load balancer los puertos y protocolos donde escuchara este balanceador.
+              Selecciona el Classic Load Balancer luego te saldra la configuración básica, en este definimos el nombre del load balancer los puertos y protocolos donde escuchara este balanceador.
 
                <img class="img-fluid" src="img/load1.jpg" alt="">
               </a>
 
-              Luego asignamos el grupo de seguridad que tendra este balanceador de carga, posteriormente nos saldra un mensaje de alerta avisando que no estamos usando certidicado ssl, por ahora esta bien asi por lo que le damos siguiente, luego configuramos el Health Check
+              Luego asignamos el grupo de seguridad que tendrá este balanceador de carga, posteriormente nos saldra un mensaje de alerta avisando que no estamos usando un certificado ssl, por ahora está bien así por lo que le damos siguiente, luego configuramos el Health Check
 
              <img class="img-fluid" src="img/load2.jpg" alt="">
               </a>
 
-              Luego nos pedira seleccionar una instancia,como no la hemos creado aún solo ponemos siguiente.Luego nos pedia poner algun tag, no pondremos nada y seguimos, finalmente tendremos nuestro balanceador de carga creado.
+              Luego nos pedirá seleccionar una instancia, como no la hemos creado aún solo ponemos siguiente. Luego nos pedira poner algun tag, no pondremos nada y seguimos, finalmente tendremos nuestro balanceador de carga creado.
 
               <img class="img-fluid" src="img/load4.jpg" alt="">
               </a>
@@ -140,12 +142,12 @@
                 <a href="#">
               <img class="img-fluid" src="img/instance1.jpg" alt="">
               </a>
-              En esta parte instalamos el s.o que queramos, hay gratuitos y otros no, elegimos Amazon Linux
+              En esta parte instalamos el S.O que queramos, hay gratuitos y otros no, elegimos Amazon Linux
                <a href="#">
               <img class="img-fluid" src="img/instance2.jpg" alt="">
               </a>
-              Luego nos preguntara que capacidad necesitamos, elegimos la que viene por defecto (t2.micro) y precionamos Next.<br>
-              En esta area de configuracion a nivel de servidor vemos que abajo esta la seccion Advance detail. alli pondreos los comandos que se ejecutaran cuando se genere la instancia asi que pondremos los comandos para crear un servidor LAMP, que son los siguientes 
+              Luego nos preguntara que capacidad necesitamos, elegimos la que viene por defecto (t2.micro) y presionamos Next.<br>
+              En esta área de configuración a nivel de servidor vemos que abajo esta la sección Advance detail. allí pondremos los comandos que se ejecutaran cuando se genere la instancia, así que pondremos los comandos para crear un servidor LAMP, que son los siguientes 
 
               <div class="color-blue"> 
               #! /bin/bash -ex <br>
@@ -157,7 +159,7 @@
               <img class="img-fluid" src="img/instance3.jpg" alt="">
               </a>
 
-              continuamos con Next y en Add Storage dejamos la configuracion sobre la capacidades que tiene para trabajar el sistema por defecto, y seguimos con next. Posteriormente nos dejara poner Tags donde ponemos datos con al informacion que querramos que tena la instancia.
+              continuamos con Next y en Add Storage dejamos la configuración sobre la capacidades que tiene para trabajar el sistema por defecto, y seguimos con next. Posteriormente nos dejara poner Tags donde ponemos datos con la información que queramos que tenga la instancia.
               <a href="#">
               <img class="img-fluid" src="img/instance4.jpg" alt="">
               </a>
@@ -168,21 +170,21 @@
               </a>
 
               y listo!. <br>
-              Su instancia al pricipio saldra con estado pendiente y luego estara corriendo.
+              Su instancia al principio saldrá con estado pendiente y luego estará corriendo.
             </p>
 
             <p>
               <h3> Conectandonos vía SSH</h3> <br>
-              Nos vamos a la consola y ponemos el siguiente comando
+               Nos vamos a la consola y ponemos el siguiente comando
                <div class="color-blue"> 
                ssh -i Download/ejemplo2.pem ec2-user@18.220.179.187
                </div>
                donde -i significa que archivo vinculamos de la llave al servidor <br>
-               Download por que ahí tengo mi llave puede que la tengan en otro lado ustedes <br>
+               Download por que ahí tengo mi llave. <br>
 
                18.220.179.187 por que esa es a direccion publica de mi instancia, ustedes deben ver cual es la suya.<br>
 
-               ec2-user por q somos usuarios de ec2<br>
+               ec2-user por que somos usuarios de ec2<br>
                una vez ejecutado entraremos al servidor.
 
                 <a href="#">
@@ -213,12 +215,12 @@
             </p>
 
             <p>
-              <h3> Creams la llave SSH en el servidor</h3> <br>
-               Ahora creamos una llave en nuestro server, sin clavecon el comando <br>
+              <h3> Creamos la llave SSH en el servidor</h3> <br>
+               Ahora creamos una llave en nuestro server (sin clave), con el comando <br>
               <div class="color-blue"> 
                ssh-keygen -t rsa -b 4096 
               </div>
-              luego añadimos la llave publica generada en nuestro repostorio de GitHub. para esto primero vemos donde se creo la llave en mi caso en home
+              luego añadimos la llave publica generada en nuestro repositorio de GitHub. para esto primero vemos donde se creó la llave, en mi caso en home
 
               <img class="img-fluid" src="img/deployssh.jpg" alt="">
               </a>
@@ -227,7 +229,7 @@
               <div class="color-blue"> 
                cat id_rsa.pub 
               </div>
-              podemos ver la llave publica, copiamos y pegamos en nuetro repo de GitHub.
+              podemos ver la llave publica, copiamos y pegamos en nuestro repositorio de GitHub.
               <img class="img-fluid" src="img/keyParGit.jpg" alt="">
               </a>(click a Allow write access)
             </p>

@@ -21,6 +21,10 @@
     <!-- Custom styles for this template -->
     <link href="css/clean-blog.min.css" rel="stylesheet">
 
+    <style type="text/css">
+      .color-blue{color:#2196f3;}
+    </style>
+
   </head>
 
   <body>
@@ -53,76 +57,98 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <header class="masthead" style="background-image: url('img/ecma6.png')">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-              <h1>Medina Developer</h1>
-              <span class="subheading">Documentando y compartiendo conocimientos</span>
+              <h1>Novedades ECMAScript 6 
+</h1>
+              <span class="subheading">Revisemos las nuevas funcionalidades del estándar  de JavaScript. </span>
             </div>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- Main Content -->
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
+    <!-- Post Content -->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <p>
+            </p>
 
-            <div class="post-preview">
-                <a href="ecma6.html">
-                  <h2 class="post-title">
-                   Novedades ECMAScript 6 
-                  </h2>
-                  <h3 class="post-subtitle">
-                    Revisemos las nuevas funcionalidades del estándar de JavaScript
-                  </h3>
-                </a>
-                <p class="post-meta">Posted by
-                  <a href="#">Sebastian Medina</a>
-                  en Septiembre 01, 2017</p>
-              </div>
-            <hr>
-          
-          <div class="post-preview">
-            <a href="deployGitAws.html">
-              <h2 class="post-title">
-               Deployment en AWS con Git
-              </h2>
-              <h3 class="post-subtitle">
-                Ejecutando git en el servidor de AWS ec2 para desplegar el proyecto.
-              </h3>
-            </a>
-            <p class="post-meta">Posted by
-              <a href="#">Sebastian Medina</a>
-              en Agosto 18, 2017</p>
-          </div>
-          <hr>
+            <h3>
+              Arrow Function
+            </h3>
+              <p>Aquí podemos ver que llamar a un método arrow function es igual que a uno normal, pero en la implementación de este vemos que ya no ponemos la palabra function sino =>. donde lo que va antes del => es el parámetro y el valor del parámetro lo recibirá lo que viene después de =></p>
+              <script src="https://gist.github.com/MedinaGitHub/cbec75f3137ebab7160199bdacc2086e.js"></script>
+            <br>
 
-          <div class="post-preview">
-            <a href="gitHubCommands.html">
-              <h2 class="post-title">
-               Subiendo un proyecto a GitHub
-              </h2>
-              <h3 class="post-subtitle">
-                Desde la consola subiremos un proyecto a GitHub reconociendo los comandos básicos.
+            <h3>
+              Interpolación de String
+            </h3>
+            <p>
+              ahora podemos usar una variable dentro de una cadena agregando la siguiente sintaxis ${variable}
+            </p>
+            <script src="https://gist.github.com/MedinaGitHub/b53965e6b4a7a635dc030fc020fe5a57.js"></script>
+
+
+            <h3>
+                Parámetro Rest y operador Spread
+            </h3>
+
+            <p> 
+                El parámetro Rest consiste en decirle a la función que habrá un número indefinido de argumentos los cuales caerán dentro de un arreglo que es la que se define en el parámetro.
+            </p>
+            <p> 
+                El operador Spread consiste en descomponer el array en elementos y pasar cada uno de ellos como argumentos a una función
+              </p>
+            <script src="https://gist.github.com/MedinaGitHub/36495af99cf8a582829db54e309b160d.js"></script>
+
+            <h3> 
+              Sets
+            </h3>
+            <p>
+                Los objetos Set son colecciones de valores. Se puede iterar sus elementos en el orden de su inserción. Un valor en un Set sólo puede estar una vez; éste es único en la colección Set.
+            </p>
+            <script src="https://gist.github.com/MedinaGitHub/df774d3695c6d41732fe1c1f06d4beb1.js"></script>
+
+            <h3>
+              Maps
+            </h3>
+            <p>
+              Los mapas son una colección de datos que tiene una llave y un valor (Key - value pair).  al igual que los Set tiene métodos como
+              <br>
+              Has()
+              <br>
+              delete()
+              <br>
+              clear()
+              <br>
+              size
+              <br>
+              iteraciones
+              <br>
+              <script src="https://gist.github.com/MedinaGitHub/41206bb343ab77cca96a9d69acb8a705.js"></script>
+        
+              <h3>
+                Clases y Herencia
               </h3>
-            </a>
-            <p class="post-meta">Posted by
-              <a href="#">Sebastian Medina</a>
-              en Agosto 14, 2017</p>
-          </div>
-          <hr>
-         
-          <!-- Pager -->
-          <div class="clearfix">
-            <a class="btn btn-secondary float-right" href="#">Antiguos Post &rarr;</a>
+              <p>
+                  Antes de usar clases en js se usaban los prototype que son objetos los cuales tienen una referencia a otro objeto.
+                  ahora que están las clases logramos los siguientes beneficios :<br>
+                  Disponer de programación de alto nivel.<br>
+                  Poder tener diferentes formas de crear objetos.<br>
+                  Tener herencia en las propiedades y métodos.
+              </p>
+              <script src="https://gist.github.com/MedinaGitHub/8e2ff9b2694c1f5805e43e9436962c5a.js"></script>
+
           </div>
         </div>
       </div>
-    </div>
+    </article>
 
     <hr>
 
